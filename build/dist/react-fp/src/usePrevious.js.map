@@ -1,0 +1,1 @@
+{"version":3,"file":"usePrevious.js","sourceRoot":"","sources":["../../../../packages/react-fp/src/usePrevious.ts"],"names":[],"mappings":";;AAAA,+BAAuC;AACvC,mBAA4B,KAAQ;IAChC,IAAM,GAAG,GAAG,cAAM,CAAC,IAAgB,CAAC,CAAA;IACpC,iBAAS,CAAC;QACN,GAAG,CAAC,OAAO,GAAG,KAAK,CAAA;IACvB,CAAC,CAAC,CAAA;IAEF,OAAO,GAAG,CAAC,OAAO,CAAA;AACtB,CAAC;AAPD,4BAOC"}

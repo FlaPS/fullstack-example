@@ -1,0 +1,36 @@
+{
+  "name": "@sha/react-fp",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "files": [
+    "src"
+  ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
+  "typings": "src",
+  "scripts": {
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@types/ramda": "^0.25.41",
+    "@types/react": "^16.7.1",
+    "ramda": "^0.25.0",
+    "react": "^16.7.0-alpha.0"
+  }
+}

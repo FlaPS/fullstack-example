@@ -1,0 +1,8 @@
+{
+  "name": "@local/value-types",
+  "version": "0.1.0",
+  "description": "Isomorpic value types, to exclude circular dependencies in production mode, for e2e tests especially",
+  "main": "/index.ts",
+  "author": "Max Shammasov",
+  "license": "ISC"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@local/client-store",
+  "version": "0.1.0",
+  "description": "isomorpich client store",
+  "main": "src/index.ts",
+  "typings": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "watch": "tsc -w",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.12.6",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4"
+  },
+  "dependencies": {
+    "@local/value-types": "0.1.0",
+    "@sha/fsa": "0.0.22",
+    "@sha/utils": "0.1.0",
+    "@types/axios": "^0.14.0",
+    "@types/history": "^4.7.2",
+    "@types/ramda": "^0.25.39",
+    "axios": "^0.18.0",
+    "connected-react-router": "^5.0.1",
+    "graphql": "^14.0.2",
+    "history": "^4.7.2",
+    "ramda": "^0.25.0",
+    "react": "^16.6.3",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
+    "save": "^2.3.2"
+  }
+}

@@ -1,0 +1,38 @@
+type Query {
+    profile(id: ID!): Profile!
+    getAllUsers: [User!]!
+    totalUsers: Int!
+}
+
+
+type Knowledge {
+    language: String
+    frameworks: [String]
+}
+
+type User {
+    id: ID!
+    name: String!
+    age: Int
+    city: String
+    url: String
+    languages: [String!]
+}
+
+type Profile  {
+    id: ID!
+    name: String!
+    age: Int
+    city: String
+    url: String
+    knowledge: [Knowledge]
+}
+
+
+
+type Mutation {
+    patchProfile (
+        id: ID!,
+        city: String!
+    ): Profile
+}
