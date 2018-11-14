@@ -37,7 +37,7 @@ const makeRoute = <T extends { [K in keyof T]?: string}>(pattern: string): NavRo
 }
 
 
-type RouteCreator<T> = (props?: T) => string
+export type RouteCreator<T> = (props?: T) => string
 
 export type NavRoute<T> =
     RouteCreator<T>

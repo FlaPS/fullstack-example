@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import {configureFrontendStore, nav} from '@local/client-store'
 import {createBrowserHistory} from 'history'
 import UserListPage from './pages/UserListPage'
-import {ProfilePage} from './pages'
+import ProfilePage from './pages/ProfilePage'
 
 
 const history = createBrowserHistory()

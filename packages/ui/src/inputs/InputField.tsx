@@ -36,8 +36,10 @@ export default Pure<InputFieldProps>()
                         />
                         <PrimaryButton
                             onClick={() => {
-                                setState({editMode: false})
-                                return onChange && onChange(current || 'Unknown')
+
+                                const valueToSave = current && current.length && current || 'Unknown'
+                                setState({editMode: false, inputValue: valueToSave})
+                                return onChange && onChange(valueToSave)
                             }}
                         >
                             Submit

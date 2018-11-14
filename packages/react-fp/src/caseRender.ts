@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as TL from 'typelevel-ts'
 import * as R from 'ramda'
-type Predicate<T> = (value: T) => boolean
+type Predicate<T> = (value: T) => boolean | any
 
 
 import {default as renderChildren, Renderable} from './renderChildren'

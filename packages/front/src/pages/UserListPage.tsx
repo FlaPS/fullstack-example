@@ -1,19 +1,23 @@
 import {UsersList} from '@local/ui'
 import {connect} from 'react-redux'
-import {FrontState} from '@local/client-store/src/reducer'
-import {nav, push} from '@local/client-store'
-import {WithHistoryProps} from './WithHistoryProps'
 import {caseRender} from '@sha/react-fp'
+import {WithHistoryProps} from './WithHistoryProps'
+import {nav} from '@local/client-store'
+import {compose} from 'redux'
+import {applySpec, view, lensPath} from 'ramda'
 
 
-export default connect(
-    (state: FrontState, {history}: WithHistoryProps) => ({
-        data: state.app.users.result,
-        onSelect: obj =>
-            history.push(nav.profile(obj)),
-    }),
-)(
-    caseRender(UsersList)
-        .isNilOrEmpty('data', 'Загрузка списка пользователей'),
-)
+const mapDispatch = (dispatch, {history}: WithHistoryProps) => ({
+    onSelect: compose(history.push, nav.profile),
+})
+
+const mapState = applySpec({
+    data: view(lensPath(['app', 'users', 'value'])),
+})
+
+const MaybeUsersList = caseRender(UsersList)
+    .isNil('data', 'Загрузка списка пользователей')
+    .isEmpty('data', 'Список пользователей пуст')
+
+export default connect(mapState, mapDispatch)(MaybeUsersList)
 

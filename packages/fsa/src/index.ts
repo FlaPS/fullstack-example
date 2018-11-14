@@ -129,7 +129,7 @@ declare const process: {
 export type AsyncState<S, P = any, E = string> = {
     status?: AsyncStatus
     params?: P
-    result?: S
+    value?: S
     error?: E
 }
 
@@ -221,15 +221,15 @@ export function actionCreatorFactory(
                 } as any as AsyncState<S, P, E>)
                     .case(started,
                         (state, payload) =>
-                            ({result: undefined, error: undefined, status: 'started', params: payload}),
+                            ({value: undefined, error: undefined, status: 'started', params: payload}),
                     )
                     .case(done,
                         (state, payload) =>
-                            ({result: payload.result, error: undefined, status: 'done', params: payload.params}),
+                            ({value: payload.result, error: undefined, status: 'done', params: payload.params}),
                     )
                     .case(failed,
                         (state, payload) =>
-                            ({result: undefined, error: payload.error, status: 'failed', params: payload.params}),
+                            ({value: undefined, error: payload.error, status: 'failed', params: payload.params}),
                     ),
 
         }

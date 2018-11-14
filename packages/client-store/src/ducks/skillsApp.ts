@@ -22,7 +22,7 @@ const reducer = combineReducers({
         .case(  actions.updateProfile, (state, payload) =>
                     ({
                         ...state,
-                        result: payload,
+                        value: payload,
                     }),
             ),
     config: actions.setConfig.payloadReducer,
