@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {prop} from 'ramda'
 
-export default styled<{url?: string}, 'div'>('div')`
+export default styled.div`
     width: 100px;
     height: 100px;
     border: 1px solid #E1E1E1;

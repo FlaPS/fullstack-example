@@ -11,7 +11,6 @@ type CardProps = ExtractProps<typeof CardLayout>
 
 export type UserCardProps = User & CardProps
 
-
 const CardLayout = styled(Paper)`
   width: 220px;
   height: 292px;

@@ -1,7 +1,6 @@
 import {User, Profile} from '@local/value-types/index'
 import * as fsa from '@sha/fsa'
 import {combineReducers} from 'redux'
-import {FactoryAction} from '@sha/fsa'
 
 export type ConfigState = {
     gateway?: string

@@ -50,7 +50,7 @@ export default ({value, onChange, ref, onBack, ...rest}: ProfileViewProps & Extr
             label='Country'
             value={value.city}
             onChange={
-                city =>
+                (city: string) =>
                     onChange && onChange({...value, city})
             }
         />

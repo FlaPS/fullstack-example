@@ -17,7 +17,7 @@ const Layout =  styled.div`
 
 export default ({name, age, url}: any) =>
     <Layout>
-        <Avatar url={url as string} />
+        <Avatar url={url!} />
         <Title>{name}</Title>
         {age && <Caption>{age} years old</Caption>}
     </Layout>
