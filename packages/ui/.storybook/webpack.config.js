@@ -8,7 +8,7 @@ module.exports = (baseConfig, env, config) => {
  
     config.module.rules.push({
         test: /\.(ts|tsx)$/,
-        loader: require.resolve("ts-loader"),
+        loader: "ts-loader",
         options: {
             transpileOnly: true
         }
