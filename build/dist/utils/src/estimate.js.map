@@ -1,1 +1,0 @@
-{"version":3,"file":"estimate.js","sourceRoot":"","sources":["../../../../packages/utils/src/estimate.ts"],"names":[],"mappings":";;AAAa,QAAA,QAAQ,GAAI,UAAI,IAAa,EAAE,KAA8B;IAA9B,sBAAA,EAAA,sBAA8B;IACtE,OAAO,CAAC,IAAI,CAAC,WAAW,GAAG,KAAK,CAAC,CAAA;IAEjC,IAAM,MAAM,GAAG,IAAI,EAAE,CAAA;IAGrB,OAAO,CAAC,OAAO,CAAC,WAAW,GAAG,KAAK,CAAC,CAAA;IACpC,OAAO,MAAM,CAAA;AACjB,CAAC,CAAA"}

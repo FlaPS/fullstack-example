@@ -10,7 +10,9 @@ The original task  - ./TEST_TASK/ folder.
 ```
 This script will install all dependencies and starts three servers:
 http://localhost:6006/ - for ui kit
+
 http://localhost:8081/ - frontend in dev mode
+
 http://localhost:3001/ - backend with graphql and RESTful endpoints
 
 # TODO #
@@ -23,6 +25,8 @@ Hope to bring in consistence one with TypeScript 3 in future
 - Context depended routing & i18n
 - Switch transport feature
 - bring here @sha/logger & @sha/config & @sha/actors packages
+- Add full e22 test into client-store package based on sagas, 
+to emulate several users at the same time
 
 
 # packages #

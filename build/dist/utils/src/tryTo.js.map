@@ -1,1 +1,0 @@
-{"version":3,"file":"tryTo.js","sourceRoot":"","sources":["../../../../packages/utils/src/tryTo.ts"],"names":[],"mappings":";;AAAA,SAAgB,KAAK,CAAI,IAAa;IAClC,OAAO,EAAC,SAAS,EAAE,UAAC,KAAQ;YACpB,IAAI;gBACA,OAAO,IAAI,EAAE,CAAA;aAChB;YAAC,OAAO,CAAC,EAAE;gBACR,OAAO,CAAC,KAAK,CAAC,CAAC,CAAC,CAAA;aACnB;YACD,OAAO,KAAK,CAAA;QAChB,CAAC;KACJ,CAAA;AACL,CAAC;AAVD,sBAUC"}
