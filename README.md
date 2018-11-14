@@ -1,7 +1,7 @@
 # fullstack-example
 App with tests, storybook and backend, functional approach.
 This repository inspired by test task.
-The original task  - ./TEST/ folder. 
+The original task  - ./TEST_TASK/ folder. 
 
 # How to run #
 
