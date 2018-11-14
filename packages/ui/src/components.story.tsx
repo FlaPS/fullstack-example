@@ -1,14 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Avatar from './Avatar'
-import {User} from '@local/client-store'
-import UserCard from './UserCard'
-import UsersList from './UsersList'
+import Avatar from './components/Avatar'
+import {User} from '../../client-store/src/index'
+import UserCard from './components/UserCard'
+import UsersList from './components/UsersList'
 import {range} from 'ramda'
-import InputField from '../inputs/InputField'
+import InputField from './inputs/InputField'
 
 import {cold} from 'react-hot-loader'
-import ProfileView from './ProfileView'
+import ProfileView from './components/ProfileView'
 
 
 const userMock: User = {
@@ -84,13 +84,17 @@ storiesOf('components', module)
         <UserCard {...userMock} />,
     )
     .add('UserList', () =>
-        UsersList(userListMock),
+        UsersList({data: userListMock}),
     )
     .add('text input', () => {
-            const ColdInputField = cold(InputField)
-            return <ColdInputField value={'Bara bere'} onChange={log} label={'Confirm'}/>
+
+            return <InputField
+                        value={'Saint-Petersburg'}
+                        onChange={log}
+                        label={'Confirm'}
+                    />
         },
     )
     .add('Profile view', () =>
-        <ProfileView profile={profileMock} onChange={log}/>,
+        <ProfileView value={profileMock} onChange={log} onBack={log} />,
     )

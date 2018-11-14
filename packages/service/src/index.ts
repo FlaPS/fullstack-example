@@ -23,10 +23,12 @@ app.use('/graphiql', graphiqlExpress({
     endpointURL: '/graphql',
 }))
 
-
-export default new Promise<Server>(resolve => {
+const promise = new Promise<Server>(resolve => {
     const server = app.listen(port, host, () => {
         console.log(`Server on ${port}`)
         resolve(server)
     })
 })
+
+export default promise
+

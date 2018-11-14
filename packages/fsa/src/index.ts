@@ -21,12 +21,12 @@ export const reducerFactory = <I, P, O>(reducer: IConsumer<I, FactoryAction<P>, 
             selector(action) ? reducer(state, action) : state as any as O
 
 export interface Success<P, S> {
-    params: P
+    params?: P
     result: S
 }
 
 export interface Failure<P, E> {
-    params: P
+    params?: P
     error: E
 }
 
@@ -65,7 +65,7 @@ export type AsyncStatus = 'started' | 'done' | 'failed' | undefined
 export type WithStatus<K extends string = 'asyncStatus'> = {[key in K]: AsyncStatus}
 
 
-export interface AsyncActionCreators<P, S, E> {
+export type AsyncActionCreators<P, S, E> = {
     type: string
     started: ActionCreator<P>
     done: ActionCreator<Success<P, S>>
@@ -216,18 +216,20 @@ export function actionCreatorFactory(
             done,
             failed,
             asyncReducer:
-                reducerWithInitialState({} as any as AsyncState<S, P, E>)
+                reducerWithInitialState({
+                    value: undefined,
+                } as any as AsyncState<S, P, E>)
                     .case(started,
                         (state, payload) =>
-                            ({value: undefined, error: undefined, status: 'started', params: payload}),
+                            ({result: undefined, error: undefined, status: 'started', params: payload}),
                     )
                     .case(done,
                         (state, payload) =>
-                            ({value: payload.result, error: undefined, status: 'done', params: payload.params}),
+                            ({result: payload.result, error: undefined, status: 'done', params: payload.params}),
                     )
                     .case(failed,
                         (state, payload) =>
-                            ({value: undefined, error: payload.error, status: 'failed', params: payload.params}),
+                            ({result: undefined, error: payload.error, status: 'failed', params: payload.params}),
                     ),
 
         }
@@ -273,7 +275,7 @@ function makeReducer<InS extends OutS, OutS>(
         for (let i = 0, length = cases.length; i < length; i++) {
             const { actionCreator, handler } = cases[i]
             if (isType(actionCreator)(action))
-                return Object.assign({}, {state}, {...handler(state, action.payload) as any})
+                return Object.assign({}, {...handler(state, action.payload) as any})
 
         }
         return state

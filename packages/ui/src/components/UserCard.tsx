@@ -4,8 +4,13 @@ import {Regular} from '../styles/fonts'
 import {User} from '@local/client-store'
 import styled from 'styled-components'
 import UserHeader from './UserHeader'
+import {ExtractProps} from '@sha/react-fp'
 
-export type UserCardProps = User
+
+type CardProps = ExtractProps<typeof CardLayout>
+
+export type UserCardProps = User & CardProps
+
 
 const CardLayout = styled(Paper)`
   width: 220px;
@@ -53,8 +58,8 @@ const Languages = styled(Regular)`
   text-align: center;
 
 `
-const UserCard = ({url, age, name, languages = []}: UserCardProps) =>
-    <CardLayout>
+const UserCard = ({url, age, name, languages = [], ref, ...rest}: UserCardProps) =>
+    <CardLayout {...rest}>
         <UserHeader url={url} age={age} name={name}/>
         {
             languages.length &&

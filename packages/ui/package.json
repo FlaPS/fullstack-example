@@ -5,13 +5,12 @@
   "dependencies": {
     "@local/client-store": "0.1.0",
     "@sha/react-fp": "0.1.0",
+    "@sha/utils": "0.1.0",
     "@types/ramda": "^0.25.41",
     "@types/styled-components": "^4.0.3",
     "ramda": "^0.25.0",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
-    "react-hot-loader": "^4.3.12",
-    "react-scripts-ts": "3.1.0",
     "styled-components": "^4.0.3"
   },
   "main": "src/index.ts",
@@ -19,15 +18,10 @@
     "src"
   ],
   "scripts": {
-    "watch": "tsc -w",
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "start-storybook -p 6006"
   },
   "devDependencies": {
+    "react-hot-loader": "^4.3.12",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-links": "^3.4.11",
     "@storybook/react": "^3.4.11",

@@ -11,9 +11,4 @@ export {default as debug} from './debug'
 export {default as capitalize} from './capitalize'
 export {default as filterObj} from './filterObj'
 
-export type UnaryFn<A, R> = (value: A) => R
-
-export const cast = <T>(value: any): T => value as any as T
-
-export type Arrify<T> = T | T[]
 

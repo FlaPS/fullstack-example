@@ -87,8 +87,12 @@ const createPoster = (url: string) => <Response, Request = void>(query: string) 
             })
     ) as any as Invoker<Response, Request>
 
-export default (gateway: string = 'http://localhost:3001/graphql', gql = createPoster(gateway)) => ({
+export const api = (gateway: string = 'http://localhost:3001/graphql', gql = createPoster(gateway)) => ({
     getAllUsers: gql<Users>(getAllUsersQuery),
     getProfile: gql<Profile, {id: UserId}>(getProfileQuery),
     patchProfile: gql<Profile, Partial<Profile>>(patchUserQuery),
 })
+
+export default api
+
+export type Api = ReturnType<typeof api>

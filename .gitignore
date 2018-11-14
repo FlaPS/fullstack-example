@@ -1,5 +1,6 @@
 /.idea
 /.vscode
+/lerna-debug.json
 
 /node_modules
 /packages/*/node_modules

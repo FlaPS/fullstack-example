@@ -1,9 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import {Regular, RegularEditable} from '../styles/fonts'
-import PrimaryButton from '../components/PrimaryButton'
+import PrimaryButton from '../buttons/PrimaryButton'
 // import {usePrevious} from '@local/react-fp'
 import Input, {InputProps} from './Input'
+import {Pure} from '@sha/react-fp'
 
 
 type InputFieldProps =
@@ -21,8 +22,36 @@ const FieldDiv = styled.div`
 
 `
 
-export default ({label, onChange, value}: InputFieldProps) => {
+export default Pure<InputFieldProps>()
+    .addState<{inputValue?: string, editMode?: boolean}>()
+    .of( props => {
+            const {label, onChange, editMode, inputValue, setState, value} = props
+            const current =  inputValue === undefined  ? value : inputValue
+            return editMode
+                ?   <FieldDiv>
+                        <Regular>{label}:</Regular>
+                        <Input
+                            value={current}
+                            onChange={(inputValue: string) => setState({inputValue})}
+                        />
+                        <PrimaryButton
+                            onClick={() => {
+                                setState({editMode: false})
+                                return onChange && onChange(current || 'Unknown')
+                            }}
+                        >
+                            Submit
+                        </PrimaryButton>
+                    </FieldDiv>
+                :   <RegularEditable onClick={() => setState({editMode: true})}>{current}</RegularEditable>
+        },
+    )
 
+
+
+/*
+({label, onChange, value}: InputFieldProps) => {
+/8
     const [stateValue, setValue] = React.useState(value)
 
     const [editMode, setEditMode] = React.useState(false)
@@ -59,3 +88,4 @@ export default ({label, onChange, value}: InputFieldProps) => {
                 </FieldDiv>
             :   <RegularEditable onClick={swithToEdit}>{stateValue}</RegularEditable>
 }
+*/

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import {prop} from 'ramda'
 
-export default styled<Partial<{url: string}>, 'div'>('div')`
-    min-width: 100px;
-    min-height: 100px;
+export default styled<{url?: string}, 'div'>('div')`
+    width: 100px;
+    height: 100px;
     border: 1px solid #E1E1E1;
     border-radius: 50px;
     background-size: cover;

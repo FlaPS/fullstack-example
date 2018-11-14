@@ -5,9 +5,12 @@ import styled from 'styled-components'
 import UserHeader from './UserHeader'
 import InputField from '../inputs/InputField'
 import KnowledgeView from './KnowledgeView'
+import {ExtractProps} from '@sha/react-fp'
+import BackButton from '../buttons/BackButton'
 
 type ProfileViewProps = {
-    profile: Profile
+    value: Profile
+    onBack?: (...args: any[]) => any
     onChange?: OnChangeCallback<Profile>
 }
 
@@ -35,25 +38,26 @@ const Divider = styled.div`
   background-color: #D5D5D5;
 `
 
-export default ({profile, onChange}: ProfileViewProps) =>
-    <Layout>
+export default ({value, onChange, ref, onBack, ...rest}: ProfileViewProps & ExtractProps<typeof Layout>) =>
+    <Layout {...rest} >
+        <BackButton onClick={onBack}/>
         <UserHeader
-            url={profile.url}
-            age={profile.age}
-            name={profile.name}
+            url={value.url}
+            age={value.age}
+            name={value.name}
         />
         <InputField
             label='Country'
-            value={profile.city}
+            value={value.city}
             onChange={
                 city =>
-                    onChange && onChange({...profile, city})
+                    onChange && onChange({...value, city})
             }
         />
         <Divider />
         {
-            profile.knowledge &&
-            profile.knowledge.map(
+            value.knowledge &&
+            value.knowledge.map(
                 KnowledgeView,
             )
         }

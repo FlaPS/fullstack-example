@@ -19,12 +19,14 @@ export type TraceLevel =
     | 'error'
     | 'info'
 
-export const trace = (message: string = 'trace call', traceLevel: TraceLevel = 'log') =>
+export const trace = (message: string = 'trace call', traceLevel: TraceLevel = 'log', useDebugger: boolean = false) =>
     <T>(f: (...params: any[]) => T ) =>
         (...args): T => {
             const time = new Date().valueOf()
             const result = f(...args)
             const elapsedTime =  new Date().valueOf() - time
+            if (useDebugger)
+                debugger
             console[traceLevel](
                 message,
                 'function ' + f.name,

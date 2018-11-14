@@ -6,9 +6,6 @@
     "src"
   ],
   "typings": "src",
-  "scripts": {
-    "watch": "tsc -w"
-  },
   "devDependencies": {
     "@types/node": "^10.12.6"
   }

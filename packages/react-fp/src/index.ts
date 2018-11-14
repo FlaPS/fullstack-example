@@ -1,3 +1,6 @@
 export {default as renderChildren, Renderable} from './renderChildren'
 export {default as addKey} from './addKey'
 export {default as usePrevious} from './usePrevious'
+export {ExtractProps} from './extractProps'
+export {default as caseRender} from './caseRender'
+export {Pure} from './Pure'
