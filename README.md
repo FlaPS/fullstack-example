@@ -1,5 +1,6 @@
 # fullstack-example
 App with tests, storybook and backend, functional approach.
+This repo is not about css, but tool chain and functional approach
 This repository inspired by test task.
 The original task  - ./TEST_TASK/ folder. 
 
